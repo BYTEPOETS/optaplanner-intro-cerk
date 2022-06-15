@@ -63,6 +63,10 @@ object Testing {
     const val OPTAPLANNER_TEST = "$OPTAPLANNER_GROUP:optaplanner-test:$OPTAPLANNER_VERSION"
 }
 
+object Benchmarking {
+    const val OPTAPLANNER_BENCHMARK = "$OPTAPLANNER_GROUP:optaplanner-benchmark:$OPTAPLANNER_VERSION"
+}
+
 object Logging {
     const val LOGBACK_GROUP = "ch.qos.logback"
     const val LOGBACK_CLASSIC = "$LOGBACK_GROUP:logback-classic:$LOGBACK_VERSION"

@@ -10,6 +10,8 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    implementation(KotlinCore.KOTLIN_STD_LIB)
     implementation(project(":solver"))
+    implementation(Logging.LOGBACK_CLASSIC)
+    implementation(Benchmarking.OPTAPLANNER_BENCHMARK)
 }

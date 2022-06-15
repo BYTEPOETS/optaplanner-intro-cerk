@@ -12,7 +12,7 @@
         <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
     </termination>
     <constructionHeuristic>
-        <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+        <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
     </constructionHeuristic>
     <localSearch>
         <localSearchType>LATE_ACCEPTANCE</localSearchType>

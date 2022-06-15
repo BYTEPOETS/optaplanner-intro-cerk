@@ -15,15 +15,15 @@ class EmissionReductionConstraintProvider : ConstraintProvider {
         )
     }
 
-    // TODO: remove logic, write tests, create example solution, solve example
-
     fun dontExceedMaxBudget(constraintFactory: ConstraintFactory): Constraint =
         constraintFactory.forEach(EmissionReductionMeasure::class.java)
             .filter { it.isSelected }
             .groupBy(ConstraintCollectors.sum { measure -> measure.emissionReduction.cost })
             .join(MeasuresBudget::class.java)
             .filter { selectedBudgetsSum, measuresBudget -> selectedBudgetsSum > measuresBudget.amount }
-            .penalize("exceededMaxBudget", ONE_HARD)
+            .penalize("exceededMaxBudget", ONE_HARD) { selectedBudgetsSum, measuresBudget ->
+                selectedBudgetsSum - measuresBudget.amount
+            }
 
     fun maximizeEmissionReduction(constraintFactory: ConstraintFactory): Constraint =
         constraintFactory.forEach(EmissionReductionMeasure::class.java)

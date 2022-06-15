@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver xmlns="https://www.optaplanner.org/xsd/solver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.optaplanner.org/xsd/solver https://www.optaplanner.org/xsd/solver/solver.xsd">
+    <environmentMode>FAST_ASSERT</environmentMode>
+    <solutionClass>com.bytepoets.cerk.CerkSolution</solutionClass>
+    <entityClass>com.bytepoets.cerk.EmissionReductionMeasure</entityClass>
+    <scoreDirectorFactory>
+        <constraintProviderClass>com.bytepoets.cerk.EmissionReductionConstraintProvider</constraintProviderClass>
+    </scoreDirectorFactory>
+    <termination>
+        <secondsSpentLimit>30</secondsSpentLimit>
+        <unimprovedSecondsSpentLimit>10</unimprovedSecondsSpentLimit>
+    </termination>
+    <constructionHeuristic>
+        <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+    </constructionHeuristic>
+    <localSearch>
+        <localSearchType>LATE_ACCEPTANCE</localSearchType>
+    </localSearch>
+</solver>
